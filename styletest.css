@@ -13,16 +13,20 @@
 }
 
 #about{
-  background-color:white;
-  color: black;
-  font-size: 200%;
-  align-self: center;
-  padding-top: 7%;
-  padding-left: 45%;
+  
+  color: white ;
+  background-color: #093b3d;
+  font-size: 150%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 100%;
+  height: 150%;
+  padding-top: 5%;
+  padding-left: 20%;
+  padding-right: 20%;
+  opacity: 90%;
 
 }
 html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
-
