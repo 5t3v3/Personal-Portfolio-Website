@@ -13,11 +13,12 @@
 }
 
 #about{
-  color: #000;
+  background-color:white;
+  color: black;
   font-size: 200%;
   align-self: center;
   padding-top: 7%;
-  padding-left: 50%;
+  padding-left: 45%;
 
 }
 html, body {
