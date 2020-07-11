@@ -14,26 +14,79 @@
 
 .about{
   
-  color: white ;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #acd3df;
+  color: #062627; ;
+  font-family: 'Courier New';
   width: 100%;
+  font-weight: bolder;
   height: 150%;
-  opacity: 90%;
   font-size: 110%;
 
-
-
 }
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-.skill
-{
-  width: 100%;
-  font-size: 110%;
-  color: #000;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+.text { 
+ 
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 24px;
+  font-size: 200%;
+  color: white;
+  padding-left: 7%;
 }
 
+.text::after {
+  content: "";
+  display: inline-block;
+  background-color: #ffffff;
+  vertical-align: top;
+  width: 10px;
+  height: 21px;
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@keyframes blink {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+
+#menu li{
+  display: inline;
+  
+ 
+}
+#menu i{
+  
+  color: rgb(78, 101, 107);
+}
+
+#menu i:hover{
+  color: #ffffff;
+  
+}
+
+.progress-bar{
+  background-color: rgb(9, 34, 34);
+
+}
+
+.progress{
+
+  width: 100%;
+}
