@@ -12,21 +12,29 @@
   height: 100%;
 }
 
-#about{
+.about{
   
   color: white ;
-  background-color: #093b3d;
-  font-size: 150%;
   font-family: Georgia, 'Times New Roman', Times, serif;
   width: 100%;
   height: 150%;
-  padding-top: 5%;
-  padding-left: 20%;
-  padding-right: 20%;
   opacity: 90%;
+  font-size: 110%;
+
+
 
 }
 html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+.skill
+{
+  width: 100%;
+  font-size: 110%;
+  color: #000;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
