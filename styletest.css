@@ -1,4 +1,4 @@
-#body {
+.body {
   width: 100%;
   height: 100%;
   background-color: #000;
@@ -18,9 +18,9 @@
   padding-bottom: 1em;
   background-color: #acd3df;
   color: #062627; ;
-  font-family: 'Courier New';
+  
   width: 100%;
-  font-weight: bolder;
+  font-weight: bold;
   height: 150%;
   font-size: 110%;
 
@@ -73,7 +73,7 @@ html, body {
 }
 #menu i{
   
-  color: rgb(78, 101, 107);
+  color: rgb(158, 184, 190);
 }
 
 #menu i:hover{
@@ -90,3 +90,19 @@ html, body {
 
   width: 100%;
 }
+
+#menu2 li{
+  display: inline;
+  
+ 
+}
+#menu2 i{
+  
+  color: rgb(158, 184, 190);
+}
+
+#menu2 i:hover{
+  color: #ffffff;
+  
+}
+

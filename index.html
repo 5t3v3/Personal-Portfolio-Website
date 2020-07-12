@@ -10,16 +10,13 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	<link rel="stylesheet" href="styletest.css">
 </head>
-<body>
+<body class="body" >
 	<canvas id="canvas"></canvas>
   <script src="styletest.js"></script>
   
   <!---Code-->
   
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  <div id="body">
+  <div class="body">
   <header style="z-index: 1;height: auto; width: 100%; position:fixed ; background-color: black;">
     <div class="row" >
       <div class="col-md-6 col-8 ">
@@ -40,20 +37,20 @@
              <div class="collapse navbar-collapse pl-sm-0 pl-0 my-lg-0" id="navbarSupportedContent">
                <ul class="navbar-nav ml-auto ">
                  <li class="nav-item active ">
-                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                   <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
                  </li>
                  <li class="nav-item">
-                   <a class="nav-link" href="#">Skills</a>
+                   <a class="nav-link" href="#skills">Skills</a>
                  </li>
                  <li class="nav-item">
-                   <a class="nav-link" href="#" >Resume</a>
+                   <a class="nav-link" href="#" >Writeups</a>
                  </li>
                   
                  <li class="nav-item">
-                   <a class="nav-link " href="#">Courses</a>
+                   <a class="nav-link " href="#coursess">Courses</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="#">Contact</a>
+                     <a class="nav-link" href="#contact">Contact</a>
 
                  </li>
                </ul>
@@ -68,7 +65,7 @@
   </header>
 
 
-  <section class="my-auto" style="padding-top: 5em; padding-bottom: 2em;"  >
+  <section class="my-auto" style="padding-top: 5em; padding-bottom: 2em;" id="home" >
         <div class="container">
             <div class="row align-items-center" >
                 <div style="padding-bottom: 2em; " class="col-md-6 text-center">
@@ -136,7 +133,7 @@
 
 <section class="p-4 about ">
   <div class="container ">
-    <div class="row align-items-center">
+    <div class="row align-items-center" id="skills">
     <div class="text-center about col-md-6">
         <p >
           I'm a Cyber Security enthusiastic 💻 <br> 
@@ -147,7 +144,7 @@
         </p>
       </div>
 
-  <div class="text-center col-md-6 align-items-center">
+  <div class="text-center col-md-6 align-items-center" >
     <h3 style=" font-weight: 900;">Skills</h3>
     
     <bold >C</bold>
@@ -242,8 +239,8 @@
       
       </div>
 
-      <div class="text-center about col-md-6">
-        <h2 style="font-weight:900; font-size: 113%; " ><u>Courses Completed</u></h2>
+      <div class="text-center about col-md-6"id="coursess">
+        <h2 style="font-weight:900; font-size: 113%;  " >Courses Completed</h2>
         <ul>
           <li>Penetration testing with kali - Udemy</li>
           <li>Cyber Security Essentials - Cisco Networking Academy</li>
@@ -259,18 +256,69 @@
     </div>
 
   </div>
-
-
-<section>
-
-
-
-
 </section>
 
+<!------->
 
-<footer class="footer">
+
+<footer class="my-auto body " style="padding-top: 5em; padding-bottom: 2em;" id="contact" >
+  <div class="container">
+      <div class="row align-items-center" >
+          <div style="padding-bottom: 2em; " class="col-md-6 text-center">
+
+          </div>
+          <div class="col-md-12 text-center">
+              <h4 style="color: rgb(255, 255, 255);font-size: 2em;font-weight: 700; font-family: 'Courier New', Courier, monospace;">Get in touch with me</h4>
+              <div>
+              <ul style="padding-left: 1em; "  id="menu2" >
+                <li>
+                  <a href="https://www.facebook.com/Abhijith.Ajayakumar.A/" aria-label="Facebook">
+                    <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                  </a>
+                </li>&nbsp;
+                <li>
+                  <a href="https://www.linkedin.com/in/abhijith-a-559b761aa/" aria-label="Linkedin">
+                    <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                  </a>
+                </li>&nbsp;
+
+                <li>
+                  <a href="mailto:abhisteve123@gmail.com" aria-label="email">
+                    <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                  </a>
+                </li>&nbsp;
+
+                <li>
+                  <a href="https://github.com/5t3v3" aria-label="Github">
+                    <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                  </a>
+                </li>&nbsp;
+
+                <li>
+                  <a href="https://www.instagram.com/abhijith_ajayakumar/" aria-label="Instagram">
+                    <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                  </a>
+                </li>&nbsp;
+                <li>
+                  <a href="https://twitter.com/5t3v3_abhi" aria-label="twitter">
+                    <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                  </a>
+                </li>&nbsp;
+
+               </ul>  
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+
 </footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 	<!----->
 </body>
