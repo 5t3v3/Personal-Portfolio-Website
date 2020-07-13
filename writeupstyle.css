@@ -32,6 +32,6 @@
   z-index: 1;height: auto; width: 100%; position:fixed ; background-color: black;
 }
 #headername{
-  font-size: x-large; color: white; font-weight: 800; padding-left: 3%;
+ color: white; font-weight: 800; padding-left: 3%;font-size: 1.5em;
 }
 
