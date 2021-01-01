@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nmap</title>
+    <link rel="stylesheet" href="https://abhijith.ninja/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://abhijith.ninja/css/writeupstyle.css">
+  
+</head>
+<body class="body">
+ 
+  <header id="header" >
+    <div class="row" >
+      <div class="col-md-6 col-8 ">
+        <h1 id="headername"class="mr-auto"> <a href="https://abhijith.ninja/index.html" style="text-decoration: none; color: aliceblue;">Abhijith A</a></h1>
+
+      </div>
+      <div class="col-md-6 col-4">
+        <nav class="navbar navbar-expand-lg navbar-dark " >       
+          <div class="container-fluid">
+             <button class = "navbar-toggler ml-auto" style="height: 50px; width: 50px; "  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars "  style="font-size: 150%;"></i>
+             </button>
+             <div class="collapse navbar-collapse pl-sm-0 pl-0 my-lg-0" id="navbarSupportedContent">
+               <ul class="navbar-nav ml-auto ">
+                 <li class="nav-item active ">
+                   <a class="nav-link" href="https://abhijith.ninja/index.html">Home <span class="sr-only">(current)</span></a>
+                 </li>
+                
+                 <li class="nav-item">
+                    <a class="nav-link" href="https://abhijith.ninja/writeup.html" >Writeups</a>
+                  </li>
+                 
+                 
+               </ul>
+              </div>
+           </div>
+        </nav>
+     </div>
+  </div>
+    
+  </header>
+<div class="container" style="padding-top: 7em; color: #fffefc; font-weight: 600; font-size: 130%;">
+  <p>
+    <h1>NMAP</h1>
+    <p><h3><u>Introduction</u></h3>Nmap or network Mapper is an open source tool utility for network discovery and security auditing.
+        Nmap has been used to scan huge networks of literally hundreds of thousands of machines.
+        Nmap is usually the place we start active reconnaisance or information gathering on a target.
+        <br><br>
+        <h3><u>Nmap Usage</u></h3>
+        Like most pentesting tools, nmap is run from the terminal.
+        There is a GUI version of nmap called Zenmap, which has the same functionality and more user friendly.
+        There are versions available for both Windows and Linux.
+        Nmap can be accessed by typing nmap into the terminal command line,
+        followed by some of the "switches" (command arguments which tell a program to do different things)
+        <br><br>
+        syntax: nmap ip-range switches
+        <br>eg: nmap 127.0.0.1 -Ss -sv -T5 -oN nmap.txt
+        <br><br>
+        We will discuss the main switches later in this blog.<br><br>
+        <h4>Help Menu:  (-h)</h4>
+        We can use the nmap help menu to find out more details about the usage of Nmap.
+        <br> Syntax: nmap -h<br><br>
+        
+        <h3><u>Port Scanning </u></h3>
+        <ul>
+            <!--<li>-h :&nbsp; Help menu</li>
+                This displays a help menu with nmap usage syntax and the list of switches you can use.
+            -->
+            The basic scan types are:
+            <li>-sT :&nbsp; TCP Connect Scan</li>
+            <li>-sS :&nbsp; Syn Scan/ Stealth scan </li>
+            <li>-sU :&nbsp; UDP Scan</li>
+            <li>-sC :&nbsp; Script Scan</li></ul>
+            These are not the only scanning methods, but these are the main ones we regularly use.
+            <br><br>
+            <u>In <b>TCP Connect scan</b></u> (-sT), it follows the three way handshake method.
+            It checks for open ports by performing the three-way handshake with each target port in turn.
+            Nmap tries to connect to each specified TCP port, and determines whether the service is open by the response it receives.
+            If Nmap sends a TCP request with the SYN flag set to a closed port, the target server will respond with a TCP packet with the RST (Reset) flag set.
+             By this response, Nmap can establish that the port is closed. If the response is a SYN/ACK flag the port is open.Then a SYN packet is send to establish a connection
+             between host and server.<br>
+             Example : nmap -sT example.com
+            <br>( You need to learn TCP handshakes for better understanding.)
+            <br>
+            <br>
+            <u><b> Syn Scan</b> </u>(-sS) is also called a Stealth scan or Half-open scan.
+             It is because, unlike a TCP Connect scan ,here the scan doesn't complete a three way handshake.
+             Syn scan sends back a RST packet after receiving a SYN/ACK from server.This scan will be 
+             much faster than TCP connect scan as it is not completing the three way handshake.
+             It can be used to bypass older Intrusion Detection systems as they are looking out for a full three way handshake.
+              This is often no longer the case with modern IDS solutions;
+              it is for this reason that SYN scans are still frequently referred to as "stealth" scans.<br>
+              Example : nmap -sS example.com
+              <br><br>
+              <u><b>UDP Scan </b></u>(-sU) ,as the name suggests scans for open UDP Ports.
+              UDP connections are stateless, which means the server doesn't acknowledge the packet that is sent by the host.
+              UDP connections are mainly used for video sharing and streaming purposes, because of its speed rather than quality.
+              So it is harder t scan for open UDP ports. It takes more time to scan for open UDP Ports...(forever... :P)
+              When a packet is sent to an open UDP port, there should be no response. When this happens, Nmap refers to the port as being " open|filtered ".
+               In other words, it suspects that the port is open, but it could be firewalled.
+               If it gets a UDP response (which is very unusual), then the port is marked as open.
+               More commonly there is no response, 
+              in which case the request is sent a second time as a double-check.
+               If there is still no response then the port is marked " open|filtered " and Nmap moves on.<br>
+               Example :  nmap -sU example.com
+            <BR><br>
+              <u><b>Script Scan</b></u>(-sC) performs a script scan using the default set of scripts. It is equivalent to --script=default.
+              Some of the scripts in this default category are considered intrusive and should not be run against a target network without permission.
+              <br>
+              Example : nmap -sC example.com
+              <br><br>
+
+
+
+        <h3><u>Nmap Scripting Engine (NSE)</u></h3>
+        The Nmap Scripting Engine (NSE) is an  addition to Nmap, extending its functionality .
+         NSE Scripts are written in the Lua programming language,
+         and can be used to do a variety of things from scanning for vulnerabilities, to automating exploits for them.
+         The NSE scripts are used by a keyword " --script ".<br>To run a specific script, we would use:<br> --script=&lt;script-name&gt;
+        <br>
+        There are many categories available for NSE scripts, They are:
+        <ul>
+          <li>safe  : Doesn't affect the target</li>
+          <li>intrusive : Most likely to affect the target, not safe to perform on live production enviornments</li>
+          <li>vuln : Scan for vulnerabilities</li>
+          <li>exploit : Attempt to exploit a vulnerability</li>
+          <li>auth : Attempts to bypass authentication forrunning services</li>
+          <li>brute : Attempt to bruteforce credentials for running services</li>
+          <li>discovery : Attempt to query running services for further info about the network</li>
+        </ul>
+          A detailed view of NSE can be find on <a href="https://nmap.org/book/nse-usage.html" style="text-decoration: none;">Nmap Scripting Engine</a>
+          <br><br>
+          Usage of NSE scripts : <br> nmap --script smb-os-discovery --script-trace example.com <br>
+          nmap --script snmp-sysdescr --script-args creds.snmp=admin example.com
+          <br>nmap --script "default or safe" example.com
+
+
+
+
+
+
+
+    </p>
+
+
+<br><br><br>   
+</div>
+<footer >
+  <p style="color: #fffefc; text-align: center; font-weight: 500;"></p>
+       
+        <ul id="menu" style="text-align: center;" >
+         <li>
+            <a style="text-decoration: none;" href="https://www.facebook.com/Abhijith.Ajayakumar.A/" aria-label="Facebook">
+              <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>&nbsp;
+          <li>
+            <a style="text-decoration: none;" href="https://www.linkedin.com/in/abhijith-a-559b761aa/" aria-label="Linkedin">
+              <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>&nbsp;
+    
+          <li>
+            <a style="text-decoration: none;" href="mailto:abhisteve123@gmail.com" aria-label="email">
+              <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>&nbsp;
+    
+          <li>
+            <a style="text-decoration: none;" href="https://github.com/5t3v3" aria-label="Github">
+              <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>&nbsp;
+    
+          <li>
+            <a style="text-decoration: none;" href="https://www.instagram.com/abhijith_ajayakumar/" aria-label="Instagram">
+              <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>&nbsp;
+          <li>
+            <a style="text-decoration: none;" href="https://twitter.com/5t3v3_abhi" aria-label="twitter">
+              <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+            </a>
+          </li>&nbsp;
+    
+         </ul>  
+        
+   
+
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
