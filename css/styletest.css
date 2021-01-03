@@ -3,6 +3,7 @@
   height: 100%;
   background-color: #000;
   overflow-wrap: break-word;
+  word-wrap: break-word;
   background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(16, 20, 22, 0.801), transparent);
 }
 
